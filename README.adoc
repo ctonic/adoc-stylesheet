@@ -5,3 +5,12 @@ Customize the file _sass/chris.scss_
 Build with          ./build-stylesheet.sh chris
 
 Then do              cp chris.min.css ../
+
+
+
+sass/chris.scss::
+  * Imports the theme settings, which includes default variables and resets
+  * Imports the AsciiDoc components
+  * Defines any explicit customizations
+sass/settings/_chris.scss::
+  * Sets variables that customize Foundation 4 and the AsciiDoc CSS components
