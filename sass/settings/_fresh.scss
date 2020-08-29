@@ -1,14 +1,30 @@
 // Body (IMPORTANT $body-* variables must be defined above the defaults import)
 
-$body-bg: white;
-$body-font-color: black;
-$body-font-family: "Noto Serif", "DejaVu Serif", serif;
+// ================== from the other settings file ==================================
+$body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
+  Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+$code-font: SFMono-Regular, Menlo, Monaco, Consolas, "Ubuntu Mono",
+  "Liberation Mono", "Courier New", monospace;
+$url-font: $body-font; 
+
+// colors
+$text-color: black;
+$secondary-text-color: gray;
+$bg-color: white;
+$contrast-color: green;
+$border-color: #333333;
+// ================== from the other settings file ==================================
+
+
+$body-bg: $bg-color;
+$body-font-color: $text-color;
+$body-font-family: $body-font; // "Noto Serif", "DejaVu Serif", serif;
 
 @import "defaults";
 
 // Default Overrides
-
-$primary-color: darken(#2561ba, 5%);
+$primary-color: $contrast-color; // darken(#2561ba, 5%);
 $alert-color: lighten(#3a120c, 15%); // $code-color is 15% darker than $alert-color, so we lighten here by 15%
 $global-radius: 4px;
 $panel-bg: #f8f8f7;
@@ -17,8 +33,8 @@ $panel-font-color: rgba(0,0,0,0.75);
 // Headings
 
 $header-font-family: "Open Sans", "DejaVu Sans", sans-serif;
-$header-font-weight: 300;
-$header-font-color: #ba3925;
+$header-font-weight: bold; // 300;
+$header-font-color: $text-color; // #ba3925;
 $header-line-height: 1.2;
 $header-top-margin: 1em;
 $header-word-spacing: -0.05em;
@@ -40,7 +56,13 @@ $hr-border-color: #dddddf;
 
 // Paragraphs
 // FIXME doesn't support rem math
-//$paragraph-font-size: 1.0625rem; // result of emCalc(17px) converted to rem (18px is 1.125em)
+// $paragraph-font-size: 1.0625rem; // result of emCalc(17px) converted to rem (18px is 1.125em)
+// $paragraph-font-size: 20 rem;
+
+// %lead {
+//     font-size: $paragraph-font-size;
+//     color: $blockquote-font-color;
+//   }
 
 // Inline Code
 
@@ -91,3 +113,4 @@ $table-line-height: 1.6;
 $table-head-bg: #f7f8f7;
 $table-even-row-bg: #f8f8f7;
 $table-border-color: #dedede;
+
