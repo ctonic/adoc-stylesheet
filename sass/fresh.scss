@@ -1,56 +1,58 @@
+// I use this file to overwrite stuff from the default theme
+// this is the easiest possible way to do this for me
+
+
+
 // @import "fonts/asciidoctor";
 @import "settings/asciidoctor";
-@import "settings/fresh.scss";
+// @import "settings/fresh";
+@import "asciidoctor";
 @import "components/asciidoc";
 @import "components/awesome-icons";
 
-dt, th.tableblock, td.content, div.footnote {
-  // NOTE text-rendering is already set for p
-  text-rendering: optimizeLegibility;
+// =======================================================
+$body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
+Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+$code-font: SFMono-Regular, Menlo, Monaco, Consolas, "Ubuntu Mono",
+"Liberation Mono", "Courier New", monospace;
+
+$text-color: black;
+$contrast-color: blue;
+$secondary-text-color: gray;
+$bg-color: white;
+$border-color: #333333;
+// ===================================================
+
+h1, h2, h3, h4, p, .footnote, .title {
+  font-family: $body-font;
+  color: $text-color;
 }
 
-// QUESTION should we tighten letter spacing of text in footnotes?
-h1, h2, p, td.content, span.alt {
-  letter-spacing: -0.01em;
+h1 {
+  color: $text-color;
+  font-weight: bold;
 }
+
+// h2, h3 {
+//   color: $contrast-color;
+// }
 
 h4 {
-  font-size: 1.2rem;
-  font-weight: normal;
+  color: $secondary-text-color;
 }
 
-p, td.content, div.footnote {
-  strong {
-    // NOTE needs to apply anywhere we have bold prose
-    letter-spacing: -0.005em;
-  }
+a {
+  text-decoration: none;
+  color: blue;
 }
 
-// NOTE include blockquote for when it doesn't have a nested p
-p, blockquote, dt, td.content, span.alt {
-//   font-size: 1.0625rem;
-    font-size: 1rem;
+header {
+  border-bottom: 1px solid #e7e7e9;
 }
 
-p {
-  margin-bottom: 1.25rem;
-}
+// .listingblock .title {
 
-// restore font size in sidebar block and regular table cells
-.sidebarblock p, .sidebarblock dt, .sidebarblock td.content, p.tableblock {
-  font-size: 0.9rem;
-}
-
-.exampleblock > .content {
-  // white
-  //background-color: #fff;
-  //border-color: $panel-border-color;
-  //@include single-box-shadow($panel-border-color, 0, 1px, 2px);
-
-  // light yellow
-  background-color: #fffef7; // from rgb(252,247,227), analogous to #f8f8f7
-  border-color: $panel-border-color;
-  @include single-box-shadow($panel-border-color, 0, 1px, 4px);
-}
+// }
 
 @import "components/print";
